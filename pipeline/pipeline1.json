@@ -27,7 +27,7 @@
 				]
 			},
 			{
-				"name": "Custom1",
+				"name": "Automated Unit Test",
 				"type": "Custom",
 				"dependsOn": [
 					{
