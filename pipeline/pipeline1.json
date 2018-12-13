@@ -13,9 +13,18 @@
 					"secureInput": false
 				},
 				"typeProperties": {
+					"source": {
+						"type": "SqlSource"
+					},
 					"enableStaging": false,
 					"dataIntegrationUnits": 0
-				}
+				},
+				"inputs": [
+					{
+						"referenceName": "ADWLTSource",
+						"type": "DatasetReference"
+					}
+				]
 			},
 			{
 				"name": "Custom1",
