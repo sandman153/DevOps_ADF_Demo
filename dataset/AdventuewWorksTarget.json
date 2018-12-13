@@ -1,0 +1,10 @@
+{
+	"name": "AdventuewWorksTarget",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ADWLT_Target",
+			"type": "LinkedServiceReference"
+		},
+		"type": "AzureSqlTable"
+	}
+}
