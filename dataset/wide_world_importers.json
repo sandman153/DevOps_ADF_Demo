@@ -1,0 +1,10 @@
+{
+	"name": "wide_world_importers",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"type": "AzureSqlTable"
+	}
+}
