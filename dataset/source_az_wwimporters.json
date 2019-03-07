@@ -1,0 +1,71 @@
+{
+	"name": "source_az_wwimporters",
+	"properties": {
+		"description": "source from azure",
+		"linkedServiceName": {
+			"referenceName": "WideWorldImporters",
+			"type": "LinkedServiceReference"
+		},
+		"type": "AzureSqlTable",
+		"structure": [
+			{
+				"name": "CountryID",
+				"type": "Int32"
+			},
+			{
+				"name": "CountryName",
+				"type": "String"
+			},
+			{
+				"name": "FormalName",
+				"type": "String"
+			},
+			{
+				"name": "IsoAlpha3Code",
+				"type": "String"
+			},
+			{
+				"name": "IsoNumericCode",
+				"type": "Int32"
+			},
+			{
+				"name": "CountryType",
+				"type": "String"
+			},
+			{
+				"name": "LatestRecordedPopulation",
+				"type": "Int64"
+			},
+			{
+				"name": "Continent",
+				"type": "String"
+			},
+			{
+				"name": "Region",
+				"type": "String"
+			},
+			{
+				"name": "Subregion",
+				"type": "String"
+			},
+			{
+				"name": "Border"
+			},
+			{
+				"name": "LastEditedBy",
+				"type": "Int32"
+			},
+			{
+				"name": "ValidFrom",
+				"type": "DateTime"
+			},
+			{
+				"name": "ValidTo",
+				"type": "DateTime"
+			}
+		],
+		"typeProperties": {
+			"tableName": "[Application].[Countries]"
+		}
+	}
+}
