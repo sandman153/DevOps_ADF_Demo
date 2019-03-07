@@ -2,7 +2,7 @@
 	"name": "ADWLTSource",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "AzureSqlDatabase1",
+			"referenceName": "WideWorldImporters",
 			"type": "LinkedServiceReference"
 		},
 		"type": "AzureSqlTable",
@@ -69,7 +69,7 @@
 			}
 		],
 		"typeProperties": {
-			"tableName": "[SalesLT].[Customer]"
+			"tableName": "[Purchasing].[Suppliers]"
 		}
 	}
 }
