@@ -1,0 +1,23 @@
+{
+	"name": "master_faa_file",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "azstorage_staging",
+			"type": "LinkedServiceReference"
+		},
+		"type": "AzureBlob",
+		"typeProperties": {
+			"format": {
+				"type": "TextFormat",
+				"columnDelimiter": ",",
+				"rowDelimiter": "",
+				"nullValue": "\\N",
+				"treatEmptyAsNull": true,
+				"skipLineCount": 0,
+				"firstRowAsHeader": false
+			},
+			"fileName": "MASTER_FAA.txt",
+			"folderPath": "inpput"
+		}
+	}
+}
