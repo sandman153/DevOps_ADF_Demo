@@ -1,16 +1,24 @@
 {
 	"name": "AirelineMaster",
-	"type": "Microsoft.DataFactory/factories/linkedservices",
 	"properties": {
 		"type": "FileServer",
 		"typeProperties": {
 			"host": "BiTQ20181029",
 			"userId": "AZUREAD\\sarath",
-			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiI1ODI3ODVmMi02ZGY3LTQxYTAtYjQ2Yy1jZDEzZjhjMGQwZjAiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+			"password": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "adflabdemo",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "adflabs3storage",
+				"secretVersion": ""
+			}
 		},
 		"connectVia": {
 			"referenceName": "self-hosted",
 			"type": "IntegrationRuntimeReference"
 		}
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/linkedservices"
 }
