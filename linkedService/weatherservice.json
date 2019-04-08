@@ -4,7 +4,7 @@
 	"properties": {
 		"type": "RestService",
 		"typeProperties": {
-			"url": "https://weather-b362.restdb.io/rest/random-weather-dec-2016",
+			"url": "https://weather-b362.restdb.io",
 			"enableServerCertificateValidation": true,
 			"authenticationType": "Anonymous"
 		}
