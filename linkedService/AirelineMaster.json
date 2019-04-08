@@ -4,9 +4,13 @@
 	"properties": {
 		"type": "FileServer",
 		"typeProperties": {
-			"host": "D:\\\\GitHub\\\\adflab\\\\Deployment\\\\Files\\\\S3\\\\master.txt",
-			"userId": "sarath@bitq.com.au",
-			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkFERkxBQkFJUkxJTkVfNTkyMDA4N2UtY2M1MC00NTQzLTlhOWUtNGNjZWNkYmIxZjU1Ig0KfQ=="
+			"host": "BiTQ20181029",
+			"userId": "AZUREAD\\sarath",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiI1ODI3ODVmMi02ZGY3LTQxYTAtYjQ2Yy1jZDEzZjhjMGQwZjAiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "self-hosted",
+			"type": "IntegrationRuntimeReference"
 		}
 	}
 }
