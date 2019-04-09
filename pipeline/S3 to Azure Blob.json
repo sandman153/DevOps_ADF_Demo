@@ -59,13 +59,7 @@
 					"headers": {
 						"Content-Type": "Application/json"
 					},
-					"body": {
-						"dataFactoryName": "@{pipeline().DataFactory}",
-						"successtype": "Succeeded",
-						"message": "@{activity('S3 to Azure Blob').output.dataWritten}",
-						"pipelineName": "@{pipeline().Pipeline}",
-						"recipient": "@{pipeline().parameters.recipient}"
-					}
+					"body": "{\"dataFactoryName\":\"@{pipeline().DataFactory}\",\"successtype\":\"Succeeded\",\"message\":\"@{activity('S3 to Azure Blob').output.dataWritten}\",\"pipelineName\":\"@{pipeline().Pipeline}\",\"recipient\":\"@{pipeline().parameters.recipient}\",\"@{pipeline().api-version}\"}"
 				}
 			},
 			{
