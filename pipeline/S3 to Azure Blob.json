@@ -60,13 +60,7 @@
 						"Header": "Content-Type",
 						"Expression": "Application/json"
 					},
-					"body": {
-						"dataFactoryName": "@{pipeline().DataFactory}",
-						"successtype": "Succeeded",
-						"message": "@{activity('S3 to Azure Blob').output.dataWritten}",
-						"pipelineName": "@{pipeline().Pipeline}",
-						"recipient": "@{pipeline().parameters.recipient}"
-					}
+					"body": "Body{\"dataFactoryName\":\"@{pipeline().DataFactory}\",\"successtype\":\"Succeeded\",\"message\":\"@{activity('S3 to Azure Blob').output.dataWritten}\",\"pipelineName\":\"@{pipeline().Pipeline}\",\"recipient\":\"@{pipeline().parameters.recipient}\"}"
 				}
 			},
 			{
@@ -94,13 +88,7 @@
 						"Header": "Content-Type",
 						"Expression": "Application/json"
 					},
-					"body": {
-						"dataFactoryName": "@{pipeline().DataFactory}",
-						"successtype": "Failed",
-						"message": "@{activity('S3 to Azure Blob').error.message}",
-						"pipelineName": "@{pipeline().Pipeline}",
-						"recipient": "@{pipeline().parameters.recipient}"
-					}
+					"body": "Body{\"dataFactoryName\":\"@{pipeline().DataFactory}\",\"successtype\":\"Failed\",\"message\":\"@{activity('S3 to Azure Blob').error.message}\",\"pipelineName\":\"@{pipeline().Pipeline}\",\"recipient\":\"@{pipeline().parameters.recipient}\"}"
 				}
 			}
 		]
