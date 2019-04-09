@@ -67,6 +67,39 @@
 						"recipient": "@{pipeline().parameters.recipient}"
 					}
 				}
+			},
+			{
+				"name": "Send Failure Email",
+				"type": "WebActivity",
+				"dependsOn": [
+					{
+						"activity": "S3 to Azure Blob Copy",
+						"dependencyConditions": [
+							"Failed"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"typeProperties": {
+					"url": "https://prod-05.australiaeast.logic.azure.com:443/workflows/daef3811946c4c2989d9145ca4caa0d0",
+					"method": "POST",
+					"headers": {
+						"Content-Type": "Application/json"
+					},
+					"body": {
+						"dataFactoryName": "@{pipeline().DataFactory}",
+						"successtype": "Succeeded",
+						"message": "@{activity('S3 to Azure Blob').output.dataWritten}",
+						"pipelineName": "@{pipeline().Pipeline}",
+						"recipient": "@{pipeline().parameters.recipient}"
+					}
+				}
 			}
 		]
 	}
