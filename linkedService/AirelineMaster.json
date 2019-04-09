@@ -1,0 +1,24 @@
+{
+	"name": "AirelineMaster",
+	"properties": {
+		"type": "FileServer",
+		"typeProperties": {
+			"host": "BiTQ20181029",
+			"userId": "AZUREAD\\sarath",
+			"password": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "adflabdemo",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "adflabs3storage",
+				"secretVersion": ""
+			}
+		},
+		"connectVia": {
+			"referenceName": "self-hosted",
+			"type": "IntegrationRuntimeReference"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/linkedservices"
+}
