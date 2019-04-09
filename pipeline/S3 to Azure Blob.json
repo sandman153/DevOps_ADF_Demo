@@ -64,8 +64,7 @@
 						"successtype": "Succeeded",
 						"message": "@{activity('S3 to Azure Blob').output.dataWritten}",
 						"pipelineName": "@{pipeline().Pipeline}",
-						"recipient": "@{pipeline().parameters.recipient}",
-						"api-version": "@{pipeline().api-version}"
+						"recipient": "@{pipeline().parameters.recipient}"
 					}
 				}
 			},
