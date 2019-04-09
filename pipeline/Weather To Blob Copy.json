@@ -1,3 +1,41 @@
 {
-	"name": "Weather To Blob Copy"
+	"name": "Weather To Blob Copy",
+	"properties": {
+		"activities": [
+			{
+				"name": "Weather to Blob Copy",
+				"type": "Copy",
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"typeProperties": {
+					"source": {
+						"type": "RestSource",
+						"httpRequestTimeout": "00:01:40",
+						"requestInterval": "00.00:00:00.010"
+					},
+					"sink": {
+						"type": "BlobSink"
+					},
+					"enableStaging": false
+				},
+				"inputs": [
+					{
+						"referenceName": "restweather",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "WeatherSink",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		]
+	}
 }
