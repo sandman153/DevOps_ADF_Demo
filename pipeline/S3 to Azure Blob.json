@@ -57,7 +57,8 @@
 					"url": "https://prod-05.australiaeast.logic.azure.com:443/workflows/daef3811946c4c2989d9145ca4caa0d0",
 					"method": "POST",
 					"headers": {
-						"Content-Type": "Application/json"
+						"Content-Type": "Application/json",
+						"api-version": "2019-04-01"
 					},
 					"body": {
 						"dataFactoryName": "@{pipeline().DataFactory}",
@@ -98,6 +99,24 @@
 						"message": "@{activity('S3 to Azure Blob').error.message}",
 						"pipelineName": "@{pipeline().Pipeline}",
 						"recipient": "@{pipeline().parameters.recipient}"
+					}
+				}
+			},
+			{
+				"name": "Exec Weather to Blob",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "Send Success Email",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "Weather To Blob Copy",
+						"type": "PipelineReference"
 					}
 				}
 			}
