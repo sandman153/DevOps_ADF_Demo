@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "S3 to Azure Blob Copy",
+				"name": "S3 to Azure Blob",
 				"type": "Copy",
 				"policy": {
 					"timeout": "7.00:00:00",
@@ -40,7 +40,7 @@
 				"type": "WebActivity",
 				"dependsOn": [
 					{
-						"activity": "S3 to Azure Blob Copy",
+						"activity": "S3 to Azure Blob",
 						"dependencyConditions": [
 							"Succeeded"
 						]
