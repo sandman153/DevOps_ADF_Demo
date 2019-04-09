@@ -94,8 +94,8 @@
 					},
 					"body": {
 						"dataFactoryName": "@{pipeline().DataFactory}",
-						"successtype": "Succeeded",
-						"message": "@{activity('S3 to Azure Blob').output.dataWritten}",
+						"successtype": "Failed",
+						"message": "@{activity('S3 to Azure Blob').error.message}",
 						"pipelineName": "@{pipeline().Pipeline}",
 						"recipient": "@{pipeline().parameters.recipient}"
 					}
