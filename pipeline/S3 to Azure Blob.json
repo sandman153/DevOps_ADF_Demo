@@ -106,6 +106,10 @@
 			"recipient": {
 				"type": "String",
 				"defaultValue": "boppudsara@gmail.com"
+			},
+			"api-version": {
+				"type": "String",
+				"defaultValue": "2019-04-09"
 			}
 		}
 	}
