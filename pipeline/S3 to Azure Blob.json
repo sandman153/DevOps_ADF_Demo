@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "S3 to Azure Blob Copy",
+				"name": "S3 to Azure Blob",
 				"type": "Copy",
 				"policy": {
 					"timeout": "7.00:00:00",
@@ -40,7 +40,7 @@
 				"type": "WebActivity",
 				"dependsOn": [
 					{
-						"activity": "S3 to Azure Blob Copy",
+						"activity": "S3 to Azure Blob",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -67,7 +67,46 @@
 						"recipient": "@{pipeline().parameters.recipient}"
 					}
 				}
+			},
+			{
+				"name": "Send Failure Email",
+				"type": "WebActivity",
+				"dependsOn": [
+					{
+						"activity": "S3 to Azure Blob",
+						"dependencyConditions": [
+							"Failed"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"typeProperties": {
+					"url": "https://prod-05.australiaeast.logic.azure.com:443/workflows/daef3811946c4c2989d9145ca4caa0d0",
+					"method": "POST",
+					"headers": {
+						"Content-Type": "Application/json"
+					},
+					"body": {
+						"dataFactoryName": "@{pipeline().DataFactory}",
+						"successtype": "Failed",
+						"message": "@{activity('S3 to Azure Blob').error.message}",
+						"pipelineName": "@{pipeline().Pipeline}",
+						"recipient": "@{pipeline().parameters.recipient}"
+					}
+				}
 			}
-		]
+		],
+		"parameters": {
+			"recipient": {
+				"type": "String",
+				"defaultValue": "boppudsara@gmail.com"
+			}
+		}
 	}
 }
