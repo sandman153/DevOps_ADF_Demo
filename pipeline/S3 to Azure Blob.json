@@ -54,7 +54,7 @@
 					"secureInput": false
 				},
 				"typeProperties": {
-					"url": "https://prod-05.australiaeast.logic.azure.com:443/workflows/daef3811946c4c2989d9145ca4caa0d0?api-version=",
+					"url": "https://prod-05.australiaeast.logic.azure.com:443/workflows/daef3811946c4c2989d9145ca4caa0d0",
 					"method": "POST",
 					"headers": {
 						"Content-Type": "Application/json",
