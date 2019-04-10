@@ -57,8 +57,7 @@
 					"url": "https://prod-05.australiaeast.logic.azure.com:443/workflows/daef3811946c4c2989d9145ca4caa0d0",
 					"method": "POST",
 					"headers": {
-						"Content-Type": "Application/json",
-						"api-version": "2018-01-01"
+						"Content-Type": "Application/json"
 					},
 					"body": {
 						"dataFactoryName": "@{pipeline().DataFactory}",
