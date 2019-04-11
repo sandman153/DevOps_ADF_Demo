@@ -60,7 +60,7 @@
 						"Content-Type": "Application/json"
 					},
 					"body": {
-						"message": "@{activity('Copy1').output.dataWritten}",
+						"message": "@{activity('S3 to Azure Blob').output.dataWritten}",
 						"dataFactoryName": "@{pipeline().DataFactory}",
 						"pipelineName": "@{pipeline().Pipeline}",
 						"receiver": "@pipeline().parameters.receiver"
@@ -92,7 +92,7 @@
 						"Content-Type": "Application/json"
 					},
 					"body": {
-						"message": "@{activity('Copy1').output.dataWritten}",
+						"message": "@{activity('S3 to Azure Blob').output.dataWritten}",
 						"dataFactoryName": "@{pipeline().DataFactory}",
 						"pipelineName": "@{pipeline().Pipeline}",
 						"receiver": "@pipeline().parameters.receiver"
