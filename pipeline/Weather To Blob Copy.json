@@ -100,6 +100,12 @@
 					}
 				}
 			}
-		]
+		],
+		"parameters": {
+			"receiver": {
+				"type": "String",
+				"defaultValue": "boppudsara@gmail.com"
+			}
+		}
 	}
 }
