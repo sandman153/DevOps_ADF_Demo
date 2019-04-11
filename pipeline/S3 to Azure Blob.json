@@ -119,7 +119,7 @@
 			}
 		],
 		"parameters": {
-			"recipient": {
+			"reciver": {
 				"type": "String",
 				"defaultValue": "boppudsara@gmail.com"
 			}
