@@ -1,0 +1,54 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "adflabairline"
+		},
+		"AmazonS3Source_secretAccessKey": {
+			"value": ""
+		},
+		"MasterAirlineSource_connectionString": {
+			"value": ""
+		},
+		"azstorage_staging_connectionString": {
+			"value": ""
+		},
+		"MasterAirline_properties_typeProperties_fileName": {
+			"value": "MASTER.txt"
+		},
+		"MasterAirline_properties_typeProperties_folderPath": {
+			"value": "s3-source"
+		},
+		"WeatherSink_properties_typeProperties_fileName": {
+			"value": "weatherinfo.txt"
+		},
+		"WeatherSink_properties_typeProperties_folderPath": {
+			"value": "inputer"
+		},
+		"master_faa_file_properties_typeProperties_fileName": {
+			"value": "FAAMaster.txt"
+		},
+		"master_faa_file_properties_typeProperties_folderPath": {
+			"value": "input"
+		},
+		"AirelineMaster_properties_typeProperties_userId": {
+			"value": "AZUREAD\\sarath"
+		},
+		"AmazonS3Source_properties_typeProperties_accessKeyId": {
+			"value": "AKIAJHJOC6ITSHA22RGQ"
+		},
+		"adflabdemo_properties_typeProperties_baseUrl": {
+			"value": "https://adflabkey.vault.azure.net/"
+		},
+		"weatherservice_properties_typeProperties_url": {
+			"value": "https://weather-b362.restdb.io"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}

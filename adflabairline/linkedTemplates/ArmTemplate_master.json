@@ -1,0 +1,133 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory Name",
+			"defaultValue": "adflabairline"
+		},
+		"AmazonS3Source_secretAccessKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'secretAccessKey' of 'AmazonS3Source'"
+		},
+		"MasterAirlineSource_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'MasterAirlineSource'"
+		},
+		"azstorage_staging_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'azstorage_staging'"
+		},
+		"MasterAirline_properties_typeProperties_fileName": {
+			"type": "string",
+			"defaultValue": "MASTER.txt"
+		},
+		"MasterAirline_properties_typeProperties_folderPath": {
+			"type": "string",
+			"defaultValue": "s3-source"
+		},
+		"WeatherSink_properties_typeProperties_fileName": {
+			"type": "string",
+			"defaultValue": "weatherinfo.txt"
+		},
+		"WeatherSink_properties_typeProperties_folderPath": {
+			"type": "string",
+			"defaultValue": "inputer"
+		},
+		"master_faa_file_properties_typeProperties_fileName": {
+			"type": "string",
+			"defaultValue": "FAAMaster.txt"
+		},
+		"master_faa_file_properties_typeProperties_folderPath": {
+			"type": "string",
+			"defaultValue": "input"
+		},
+		"AirelineMaster_properties_typeProperties_userId": {
+			"type": "string",
+			"defaultValue": "AZUREAD\\sarath"
+		},
+		"AmazonS3Source_properties_typeProperties_accessKeyId": {
+			"type": "string",
+			"defaultValue": "AKIAJHJOC6ITSHA22RGQ"
+		},
+		"adflabdemo_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://adflabkey.vault.azure.net/"
+		},
+		"weatherservice_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://weather-b362.restdb.io"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas Token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"AmazonS3Source_secretAccessKey": {
+						"value": "[parameters('AmazonS3Source_secretAccessKey')]"
+					},
+					"MasterAirlineSource_connectionString": {
+						"value": "[parameters('MasterAirlineSource_connectionString')]"
+					},
+					"azstorage_staging_connectionString": {
+						"value": "[parameters('azstorage_staging_connectionString')]"
+					},
+					"AmazonS3Source_properties_typeProperties_accessKeyId": {
+						"value": "[parameters('AmazonS3Source_properties_typeProperties_accessKeyId')]"
+					},
+					"adflabdemo_properties_typeProperties_baseUrl": {
+						"value": "[parameters('adflabdemo_properties_typeProperties_baseUrl')]"
+					},
+					"weatherservice_properties_typeProperties_url": {
+						"value": "[parameters('weatherservice_properties_typeProperties_url')]"
+					},
+					"MasterAirline_properties_typeProperties_fileName": {
+						"value": "[parameters('MasterAirline_properties_typeProperties_fileName')]"
+					},
+					"MasterAirline_properties_typeProperties_folderPath": {
+						"value": "[parameters('MasterAirline_properties_typeProperties_folderPath')]"
+					},
+					"WeatherSink_properties_typeProperties_fileName": {
+						"value": "[parameters('WeatherSink_properties_typeProperties_fileName')]"
+					},
+					"WeatherSink_properties_typeProperties_folderPath": {
+						"value": "[parameters('WeatherSink_properties_typeProperties_folderPath')]"
+					},
+					"master_faa_file_properties_typeProperties_fileName": {
+						"value": "[parameters('master_faa_file_properties_typeProperties_fileName')]"
+					},
+					"master_faa_file_properties_typeProperties_folderPath": {
+						"value": "[parameters('master_faa_file_properties_typeProperties_folderPath')]"
+					},
+					"AirelineMaster_properties_typeProperties_userId": {
+						"value": "[parameters('AirelineMaster_properties_typeProperties_userId')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}
