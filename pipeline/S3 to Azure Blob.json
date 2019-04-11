@@ -54,18 +54,16 @@
 					"secureInput": false
 				},
 				"typeProperties": {
-					"url": "https://prod-05.australiaeast.logic.azure.com:443/workflows/daef3811946c4c2989d9145ca4caa0d0",
+					"url": "https://prod-06.australiaeast.logic.azure.com:443/workflows/468f43a6c3cb4681b8bcaa3167ee223b/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=737m0uAvZDdIjrlmY51EHkCuKEwAwbXQ7NhEHm3J4K0",
 					"method": "POST",
 					"headers": {
-						"Content-Type": "Application/json",
-						"api-version": "2019-04-01"
+						"Content-Type": "Application/json"
 					},
 					"body": {
-						"dataFactoryName": "@{pipeline().DataFactory}",
-						"successtype": "Succeeded",
 						"message": "@{activity('S3 to Azure Blob').output.dataWritten}",
+						"dataFactoryName": "@{pipeline().DataFactory}",
 						"pipelineName": "@{pipeline().Pipeline}",
-						"recipient": "@{pipeline().parameters.recipient}"
+						"receiver": "@pipeline().parameters.receiver"
 					}
 				}
 			},
@@ -88,17 +86,16 @@
 					"secureInput": false
 				},
 				"typeProperties": {
-					"url": "https://prod-05.australiaeast.logic.azure.com:443/workflows/daef3811946c4c2989d9145ca4caa0d0",
+					"url": "Failure URL: https://prod-05.australiaeast.logic.azure.com:443/workflows/a925863dd7ec40d59eef0dc87e80d1c3/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=v48bQGk-FXRnhVUGv30zFBSlXnqpshTMyljGYntNhxM",
 					"method": "POST",
 					"headers": {
 						"Content-Type": "Application/json"
 					},
 					"body": {
+						"message": "@{activity('S3 to Azure Blob').output.dataWritten}",
 						"dataFactoryName": "@{pipeline().DataFactory}",
-						"successtype": "Failed",
-						"message": "@{activity('S3 to Azure Blob').error.message}",
 						"pipelineName": "@{pipeline().Pipeline}",
-						"recipient": "@{pipeline().parameters.recipient}"
+						"receiver": "@pipeline().parameters.receiver"
 					}
 				}
 			},
@@ -122,7 +119,7 @@
 			}
 		],
 		"parameters": {
-			"recipient": {
+			"receiver": {
 				"type": "String",
 				"defaultValue": "boppudsara@gmail.com"
 			}
