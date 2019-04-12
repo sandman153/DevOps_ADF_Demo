@@ -124,5 +124,6 @@
 				"defaultValue": "boppudsara@gmail.com"
 			}
 		}
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
 }

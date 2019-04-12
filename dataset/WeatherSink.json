@@ -19,5 +19,6 @@
 			"fileName": "weatherinfo.txt",
 			"folderPath": "inputer"
 		}
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
 }

@@ -1,5 +1,6 @@
 {
 	"name": "adflabdemo",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
 	"properties": {
 		"type": "AzureKeyVault",
 		"typeProperties": {

@@ -159,5 +159,6 @@
 			"fileName": "MASTER.txt",
 			"folderPath": "s3-source"
 		}
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
 }

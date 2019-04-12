@@ -19,5 +19,6 @@
 			"fileName": "FAAMaster.txt",
 			"folderPath": "input"
 		}
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
 }

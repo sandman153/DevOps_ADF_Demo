@@ -1,5 +1,6 @@
 {
 	"name": "AirelineMaster",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
 	"properties": {
 		"type": "FileServer",
 		"typeProperties": {
@@ -19,6 +20,5 @@
 			"referenceName": "self-hosted",
 			"type": "IntegrationRuntimeReference"
 		}
-	},
-	"type": "Microsoft.DataFactory/factories/linkedservices"
+	}
 }
